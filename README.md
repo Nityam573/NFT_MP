@@ -1,4 +1,4 @@
-# ART MUSEUM
+# NFT MARKETPLACE ON BFT 
 
 git clone <repo link>
 npm install
