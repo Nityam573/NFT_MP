@@ -82,63 +82,60 @@ function Navbar() {
   });
 
   return (
-    <div className=''>
-      <nav className='w-full'>
-        <ul className='flex items-end justify-between py-3 bg-transparent text-white'>
-          <li className='flex items-end ml-5 pb-2'>
-            <Link to='/'>
-              <div className='inline-block font-bold text-xl ml-2'>
-                NFT Museum
-              </div>
+    <>
+      <nav className="w-[80%] bg-white rounded-3xl flex mx-auto mt-4 p-[0.7rem]">
+        <ul className="w-[40%]">
+          <li className="flex mt-2 items-center">
+            <Link to="/">
+              <div className="text-[18px] font-bold capitalize">NFT MUSEUM</div>
             </Link>
           </li>
-          <li className='w-2/6'>
-            <ul className='lg:flex justify-between font-bold mr-10 text-lg'>
-              {location.pathname === "/" ? (
-                <li className='border-b-2 hover:pb-0 p-2'>
-                  <Link to='/'>Showcase</Link>
-                </li>
-              ) : (
-                <li className='hover:border-b-2 hover:pb-0 p-2'>
-                  <Link to='/'>Showcase</Link>
-                </li>
-              )}
-              {location.pathname === "/sellNFT" ? (
-                <li className='border-b-2 hover:pb-0 p-2'>
-                  <Link to='/sellNFT'>List My ART</Link>
-                </li>
-              ) : (
-                <li className='hover:border-b-2 hover:pb-0 p-2'>
-                  <Link to='/sellNFT'>List My ART</Link>
-                </li>
-              )}
-              {location.pathname === "/profile" ? (
-                <li className='border-b-2 hover:pb-0 p-2'>
-                  <Link to='/profile'>Profile</Link>
-                </li>
-              ) : (
-                <li className='hover:border-b-2 hover:pb-0 p-2'>
-                  <Link to='/profile'>Profile</Link>
-                </li>
-              )}
-              <li>
-                <button
-                  className='enableEthereumButton bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm'
-                  onClick={connectWebsite}>
-                  {connected ? "Connected" : "Connect Wallet"}
-                </button>
-              </li>
-            </ul>
+        </ul>
+        <ul className="flex flex-row w-[60%] justify-between text-black">
+          {location.pathname === "/" ? (
+            <li className="flex justify-center items-center text-[16px]">
+              <Link to="/">Showcase</Link>
+            </li>
+          ) : (
+            <li className="flex justify-center items-center text-[16px]">
+              <Link to="/">Showcase</Link>
+            </li>
+          )}
+          {location.pathname === "/sellNFT" ? (
+            <li className="flex justify-center items-center text-[16px]">
+              <Link to="/sellNFT">List My ART</Link>
+            </li>
+          ) : (
+            <li className="flex justify-center items-center text-[16px]">
+              <Link to="/sellNFT">List My ART</Link>
+            </li>
+          )}
+          {location.pathname === "/profile" ? (
+            <li className="flex justify-center items-center text-[16px]">
+              <Link to="/profile">Profile</Link>
+            </li>
+          ) : (
+            <li className="flex justify-center items-center text-[16px]">
+              <Link to="/profile">Profile</Link>
+            </li>
+          )}
+          <li className="flex justify-center items-center text-[16px]">
+            <button
+              className="enableEthereumButton bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-3xl"
+              onClick={connectWebsite}
+            >
+              {connected ? "Connected" : "Connect Wallet"}
+            </button>
           </li>
         </ul>
       </nav>
-      <div className='text-white text-bold text-right mr-10 text-sm'>
+      <div className="text-white text-bold text-right mr-10 text-sm">
         {currAddress !== "0x"
           ? "Connected to"
           : "Not Connected. Please login to view NFTs"}{" "}
         {currAddress !== "0x" ? currAddress.substring(0, 15) + "..." : ""}
       </div>
-    </div>
+    </>
   );
 }
 

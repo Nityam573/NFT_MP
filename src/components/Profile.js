@@ -75,16 +75,16 @@ export default function Profile() {
   if (!dataFetched) getNFTData(tokenId);
 
   return (
-    <div className='profileClass' style={{ "min-height": "100vh" }}>
+    <div className='profileClass' style={{ "min-height": "80vh" }}>
       <Navbar></Navbar>
-      <div className='profileClass'>
-        <div className='flex text-center flex-col mt-11 md:text-2xl text-white'>
-          <div className='mb-5'>
+      <div className='profileClass flex mx-auto flex-col rounded-xl mt-8 bg-white border-2 w-[600px] text-black py-8'>
+        <div className='flex text-center flex-col md:text-2xl text-purple-500'>
+          <div className=''>
             <h2 className='font-bold'>Wallet Address</h2>
             {address}
           </div>
         </div>
-        <div className='flex flex-row text-center justify-center mt-10 md:text-2xl text-white'>
+        <div className='flex flex-row text-center justify-center mt-10 md:text-2xl text-purple-500'>
           <div>
             <h2 className='font-bold'>No. of ARTs</h2>
             {data.length}
@@ -94,7 +94,7 @@ export default function Profile() {
             {totalPrice} BFT
           </div>
         </div>
-        <div className='flex flex-col text-center items-center mt-11 text-white'>
+        <div className='flex flex-col text-center items-center mt-11'>
           <h2 className='font-bold'>Your ARTSs</h2>
           <div className='flex justify-center flex-wrap max-w-screen-xl'>
             {data.map((value, index) => {

@@ -91,13 +91,29 @@ export default function Marketplace() {
     <div>
       <Navbar></Navbar>
       <div className='flex flex-col place-items-center justify-center min-h-[80vh] w-full'>
-        <div className='md:text-xl font-bold text-white'>Top ARTs</div>
+        <div className='font-bold text-[36px]'>Top ARTs</div>
         <div className='flex mt-5 justify-between flex-wrap max-w-screen-xl text-center'>
           {data?.map((value, index) => {
             return <NFTTile data={value} key={index}></NFTTile>;
           })}
         </div>
       </div>
+      <section className="bg-gray-800 text-gray-300 py-10">
+      <div class="container mx-auto flex flex-col items-center justify-between">
+        <div class="flex items-center mb-4">
+            <span class="text-xl font-semibold">My Website</span>
+        </div>
+        <ul class="flex space-x-4">
+            <li><a href="#" class="hover:text-white">Home</a></li>
+            <li><a href="#" class="hover:text-white">About</a></li>
+            <li><a href="#" class="hover:text-white">Services</a></li>
+            <li><a href="#" class="hover:text-white">Contact</a></li>
+        </ul>
+        <div>
+            <p>&copy; 2024 My Website. All rights reserved.</p>
+        </div>
+    </div>
+      </section>
     </div>
   );
 }
